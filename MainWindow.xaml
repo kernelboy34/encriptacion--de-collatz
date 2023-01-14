@@ -1,0 +1,27 @@
+﻿<Window x:Class="encriptacion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:encriptacion"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid Background="Black" RenderTransformOrigin="0.655,0.431">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="134" />
+            <ColumnDefinition Width="523"/>
+            <ColumnDefinition Width="123" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" FontSize="48"  Foreground="Cyan">encriptacion de collatz</Label>
+        <Button Background="Black" BorderBrush="Black" Foreground="Cyan" FontSize="45">=</Button>
+        <Button Grid.Row="2" Grid.Column="1" Width="423" BorderBrush="Cyan" BorderThickness="8" Background="Black" FontSize="42" Foreground="Cyan" Height="85" Click="Button_Click"> encriptar</Button>
+        <Label Grid.Row="1" Foreground="Cyan" FontSize="34" Margin="0,77,0,102" >mensaje</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="56" Width="422" Margin="25,80,76,114" Background="Black" BorderBrush="Cyan" BorderThickness="6" Foreground="Cyan" FontSize="32" x:Name="pe"></TextBox>
+        
+    </Grid>
+</Window>
