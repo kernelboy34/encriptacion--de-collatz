@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Packaging;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -54,22 +55,34 @@ namespace encriptacion
 
 
             }
-        }
+        }                                                  
         public void proceso (string pro)
         {
             this.pa = pro;
             List<char> alfabeto = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~' };
-            StreamReader r = new StreamReader("D:\\mensje.txt");
-            string li = r.ReadLine();
-            r.Close();
-            for (int fgh = 0; fgh < li.Length; fgh++)
+            String[] li = File.ReadAllLines("D:\\mensje.txt");
+            List<int> numbers = new List<int>();
+            foreach (string line in li)
             {
-                char ch = li[1];
-                char m = li[2];
-                char h = li[3];
-                StreamWriter ghk = new StreamWriter("D:\\so.txt");
-                ghk.Write(alfabeto[ch] +" "+ alfabeto[m] +" " + alfabeto[h]);
-                ghk.Close();
+                if (int.TryParse(line, out int number))
+                {
+                    numbers.Add(number);
+                }
+                else
+                {
+                    // maneja el error si la conversión falla
+                }
+            }
+            int rf =1;
+            for (int fgh = 0; fgh < pa.Length; fgh++)
+            {
+                char down = Convert.ToChar(pro);
+                if (down  == alfabeto[2])
+                {
+                    StreamWriter ghk = new StreamWriter("D:\\so.txt");
+                    ghk.Write(alfabeto[numbers[1]] + " ");
+                    ghk.Close();
+                }    
             }
         }
     }
