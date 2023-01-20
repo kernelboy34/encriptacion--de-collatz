@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Packaging;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -59,31 +60,46 @@ namespace encriptacion
         public void proceso (string pro)
         {
             this.pa = pro;
-            List<char> alfabeto = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~' };
-            String[] li = File.ReadAllLines("D:\\mensje.txt");
+            List<string> alfabeto = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", "\\", "|", ";", ":", "'", "\"", ",", ".", "<", ">", "?", "/", "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "Ð", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "Ø", "Ù", "Ú", "Û", "Ü", "Ý", "Þ", "ß", "à", "á", "â", "ã", "ä", "å", "æ", "ç", "è", "é", "ê", "ë", "ì", "í", "î", "ï", "ð", "ñ", "ò", "ó", "ô", "õ", "ö", "ø", "ù", "ú", "û", "ü", "ý", "þ", "ÿ" };
+            string [] li = File.ReadAllLines("D:\\mensje.txt");
             List<int> numbers = new List<int>();
             foreach (string line in li)
             {
-                if (int.TryParse(line, out int number))
+               foreach (string p in line.Split(" "))
                 {
-                    numbers.Add(number);
-                }
-                else
-                {
-                    // maneja el error si la conversión falla
+                    int n;
+                    if (int.TryParse(p, out n))
+                    {
+                        numbers.Add(n);
+                    }
                 }
             }
-            int rf =1;
-            for (int fgh = 0; fgh < pa.Length; fgh++)
+         
+            for (int fgh = 0; fgh < pro.Length; fgh++)
             {
-                char down = Convert.ToChar(pro);
-                if (down  == alfabeto[2])
+                int des = numbers[fgh];
+                string down = pro;
+                string separador = " ";
+                StreamWriter ghk = new StreamWriter("D:\\so.txt");
+                foreach (char letra in down)
                 {
-                    StreamWriter ghk = new StreamWriter("D:\\so.txt");
-                    ghk.Write(alfabeto[numbers[1]] + " ");
-                    ghk.Close();
-                }    
+                    if (alfabeto.Contains(letra.ToString()))
+                    {
+                        int posicion = alfabeto.IndexOf(letra.ToString());
+                        int posicionFinal = (posicion + des) % alfabeto.Count;
+                        char letraencriptada = alfabeto[posicionFinal][0];
+                        separador += letraencriptada;
+                    }
+                    else
+                    {
+                        MessageBox.Show("xd");
+                    }
+                }
+                ghk.Write(separador);
+                ghk.Close();
+
             }
+           
         }
     }
 }
