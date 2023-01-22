@@ -21,7 +21,7 @@ namespace encriptacion
             for (int i = 0; i < da; i++)
             {
                 List<int> a = new List<int>();
-                int wi =da;
+                int wi = da;
                 //usamos un for para que encaso de usar una lista el contador recorra cada posicion
                 while (wi != 1 && wi != 2 && wi != 4)
                 {
@@ -52,20 +52,20 @@ namespace encriptacion
                     }
                 }
                 break;
-               
+
 
 
             }
-        }                                                  
-        public void proceso (string pro)
+        }
+        public void proceso(string pro)
         {
             this.pa = pro;
             List<string> alfabeto = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", "\\", "|", ";", ":", "'", "\"", ",", ".", "<", ">", "?", "/", "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "Ð", "Ñ", "Ò", "Ó", "Ô", "Õ", "Ö", "Ø", "Ù", "Ú", "Û", "Ü", "Ý", "Þ", "ß", "à", "á", "â", "ã", "ä", "å", "æ", "ç", "è", "é", "ê", "ë", "ì", "í", "î", "ï", "ð", "ñ", "ò", "ó", "ô", "õ", "ö", "ø", "ù", "ú", "û", "ü", "ý", "þ", "ÿ" };
-            string [] li = File.ReadAllLines("D:\\mensje.txt");
+            string[] li = File.ReadAllLines("D:\\mensje.txt");
             List<int> numbers = new List<int>();
             foreach (string line in li)
             {
-               foreach (string p in line.Split(" "))
+                foreach (string p in line.Split(" "))
                 {
                     int n;
                     if (int.TryParse(p, out n))
@@ -74,15 +74,15 @@ namespace encriptacion
                     }
                 }
             }
-         
-            for (int fgh = 0; fgh < pro.Length; fgh++)
+            string separador = "";
+            string down = pro;
+            StreamWriter ghk = new StreamWriter("D:\\so.txt");
+            for (int i = 0; i < down.Length; i++)
             {
-                int des = numbers[fgh];
-                string down = pro;
-                string separador = " ";
-                StreamWriter ghk = new StreamWriter("D:\\so.txt");
-                foreach (char letra in down)
+                if (i < numbers.Count)
                 {
+                    int des = numbers[i];
+                    char letra = down[i];
                     if (alfabeto.Contains(letra.ToString()))
                     {
                         int posicion = alfabeto.IndexOf(letra.ToString());
@@ -95,11 +95,14 @@ namespace encriptacion
                         MessageBox.Show("xd");
                     }
                 }
-                ghk.Write(separador);
-                ghk.Close();
-
+                else
+                {
+                    break;
+                }
             }
-           
+            ghk.Write(separador);
+            ghk.Close();
+
         }
     }
 }
