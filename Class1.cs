@@ -72,7 +72,7 @@ namespace encriptacion
                     {
                         numbers.Add(n);
                     }
-                }
+                }//en esta parte sacamos un mensaje de texto postriormente con el foreach agregamos el texto en una cadena dentro de la lista que tenemos
             }
             string separador = "";
             string down = pro;
@@ -100,6 +100,7 @@ namespace encriptacion
                     break;
                 }
             }
+            // en este bucle lo que hacemos  es encontrar la pocision de cada una de las letras y su pocision respectiva
             ghk.Write(separador);
             ghk.Close();
             //hecho por kernelboy34
