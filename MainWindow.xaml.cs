@@ -30,7 +30,7 @@ namespace encriptacion
         {
             string a;
             Random ride = new Random();
-            int pi= ride.Next(10,600);
+            int pi= ride.Next(1,228);
             int fj = pi;
             a = pe.Text;
             StreamWriter f = new StreamWriter("D:\\mensaje.txt");
