@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -39,7 +39,7 @@ namespace encriptacion
             collatz iam = new collatz();
             iam.sec(fj);
             iam.proceso(a);
-
+           //hecho por kernelboy34
         }
     }
 }
