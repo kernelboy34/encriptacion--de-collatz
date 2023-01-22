@@ -102,7 +102,7 @@ namespace encriptacion
             }
             ghk.Write(separador);
             ghk.Close();
-
+            //hecho por kernelboy34
         }
     }
 }
