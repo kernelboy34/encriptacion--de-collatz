@@ -4,3 +4,5 @@
 <img src="https://raw.githubusercontent.com/kernelboy34/encriptacion--de-collatz/main-ker/fhhf.PNG"/>
 <p>cifrado de collatz<p>
 <img src="https://raw.githubusercontent.com/kernelboy34/encriptacion--de-collatz/main-ker/magic.PNG"/>
+<p>el desecriptador para desencriptar e mensaje usamos el mismo concepto que el encrriptador solo que en reversa usando la posicion descompuesta del encriptador </p>
+<img src="https://github.com/kernelboy34/encriptacion--de-collatz/blob/main-ker/hhd.PNG"/>
