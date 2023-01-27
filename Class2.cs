@@ -100,5 +100,21 @@ namespace encriptacion
             ghk.Close();
             MessageBox.Show(separador);
         }
+        public void rsa(int r,int q,int p)
+        {
+            this.lla = r;
+            this.la= q;
+            this.a = p;
+            int n = p * q;
+            int mh = n/p;
+            int O= (p-1)*(q-1);
+            int MCD = O / r;
+            StreamWriter LLave = new StreamWriter(("D:\\llavesita.txt"));
+            LLave.Write("llave encriptada :"+O+" llave principal y secumdaria "+n);
+            LLave.Close();
+            StreamWriter LLav = new StreamWriter(("D:\\llavesi.txt"));
+            LLav.Write("llave desencriptada :" + MCD + " llave principal y secumdaria " + mh);
+            LLav.Close();
+        }
     }
 }
