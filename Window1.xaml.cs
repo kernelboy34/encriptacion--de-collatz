@@ -41,5 +41,10 @@ namespace encriptacion
             fgh.procso(entero);
             fgh.desencriptado(mensaje);
         }
+         private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window2 xd= new Window2();  
+            xd.Show();  
+        }
     }
 }
