@@ -1,0 +1,30 @@
+﻿<Window x:Class="encriptacion.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:encriptacion"
+        mc:Ignorable="d"
+        Title="Window2" Height="550" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Usuario\source\repos\encriptacion\encriptacion\imagenes\_110258449_gettyimages-1194013141.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Foreground="Cyan" Background="Black" Grid.Column="0" Grid.ColumnSpan="4" FontSize="45" Height="93" Margin="-2,1,2,40">cifrado por capas</Label>
+        <Label Grid.Row="2" Foreground="Cyan" FontSize="43" Margin="-3,18,3,115" Grid.RowSpan="2">mensaje:</Label>
+        <TextBox Grid.Row="2" Grid.ColumnSpan="3" Height="65" Margin="199,13,1,31" Background="Black" Foreground="Cyan" FontSize="23" BorderBrush="Cyan" BorderThickness="4"/>
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Background="Black" Foreground="Cyan" BorderBrush="Cyan" BorderThickness="8" FontSize="55" Click="Button_Click">encriptar </Button>
+    </Grid>
+</Window>
